@@ -7,9 +7,10 @@ Feature: Appy loan
 
     Scenario Outline: Monthly loan with few instalments and repayment day as Weekend
         When I select loan amount "<loan_amount>"
-        And I select "<instalment_number>" for "<type>"
+        And I select "<instalment_number>" for "<loan_type>"
         And I select the repayment date as "<date>"
         Then I verify that it display the first repayment date as "<date>"
     Examples:
-        | loan_amount | instalment_number | type    | date |
-        | 200         | 2                 | MONTHLY | 16   |
+        | loan_amount | instalment_number | loan_type    | date |
+        | 200         | 2                 | MONTHLY      | 16   |
+        | 1000        | 2                 | MONTHLY      | 16   |

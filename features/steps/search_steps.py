@@ -16,16 +16,16 @@ def step_impl(context):
 
 @step('I select loan amount "{loan_amount}"')
 def step_impl(context, loan_amount):
-    assert_equal(context.loan_page.select_loan_amount(loan_amount), "200")
+    assert_equal(context.loan_page.select_loan_amount(loan_amount), loan_amount)
 
-@step('I select "{instalment_number}" for "{type}"')
-def step_impl(context, instalment_number, type):
-    page = Loan(context)
+@step('I select "{instalment_number}" for "{loan_type}"')
+def step_impl(context, instalment_number, loan_type):
+    assert_equal(context.loan_page.select_instalment(instalment_number, loan_type), "2")
 
 @step('I select the repayment date as "{date}"')
 def step_impl(context, date):
-    page = Loan(context)
+    context.loan_page.select_repayment_date(date)
 
 @step ('I verify that it display the first repayment date as "{date}"')
 def step_impl(context, date):
-    context.loan_page.get_page_title
+    assert_equal(context.loan_page.verify_repayment_date(), "Friday 14 Jun 2019")
