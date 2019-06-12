@@ -1,4 +1,5 @@
 # Auden Tech Test
+# Test 1:
 Using Python with Selenium and behave
 # Reason for using this tool: 
 1. Easy to install on any machine
@@ -12,4 +13,9 @@ Using Python with Selenium and behave
 ``` pip install -r requirements.txt ```
 3. Enter command to run the test
 ``` behave Test.features ```
+
+# Test 2:
+# SoapUI
+Please find the file converter-soapui-project.xml for the project file
+In the file, there are 2 Request test cases and a property transfer to pass the request value
 
