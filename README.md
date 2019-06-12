@@ -8,10 +8,11 @@ Using Python with Selenium and behave
 4. Has been used before
 
 ## To run the test
-1. Navigate to features folder
-2. Enter command to install libraries
+1. Required to install Python and pip 
+2. Navigate to features folder in terminal
+3. Enter command to install libraries
 ``` pip install -r requirements.txt ```
-3. Enter command to run the test
+4. Enter command to run the test
 ``` behave Test.features ```
 
 # Test 2:
