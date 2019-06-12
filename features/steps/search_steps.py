@@ -14,9 +14,9 @@ def step_impl(context):
 def step_impl(context):
     assert_equal(context.loan_page.get_header(), "Hello, how much would you like to borrow?")
 
-@step('I select loan amount "{loan_amount}"')
-def step_impl(context, loan_amount):
-    assert_equal(context.loan_page.select_loan_amount(loan_amount), loan_amount)
+@step('I select loan amount "{loan_amount}" for "{loan_type}"')
+def step_impl(context, loan_amount, loan_type):
+    assert_equal(context.loan_page.select_loan_amount(loan_amount, loan_type), loan_amount)
 
 @step('I select "{instalment_number}" for "{loan_type}"')
 def step_impl(context, instalment_number, loan_type):
@@ -28,4 +28,7 @@ def step_impl(context, date):
 
 @step ('I verify that it display the first repayment date as "{date}"')
 def step_impl(context, date):
-    assert_equal(context.loan_page.verify_repayment_date(), "Friday 14 Jun 2019")
+    if date == "16":
+        assert_equal(context.loan_page.verify_repayment_date(), "Friday 14 Jun 2019")
+    elif date == "Fri":
+        assert_equal(context.loan_page.verify_repayment_date()[:6], "Friday")
